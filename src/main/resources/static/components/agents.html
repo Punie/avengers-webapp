@@ -1,0 +1,47 @@
+<div class="container" ng-controller="agentController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <h1>Agents <span class="badge" ng-bind="agents.length"></span></h1>
+
+            <hr>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="agFilter">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-filter"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>First Name <span class="glyphicon glyphicon-sort-by-alphabet" type="button" ng-click="agOrderBy = 'firstName'"></span></th>
+                    <th>Last Name <span class="glyphicon glyphicon-sort-by-alphabet" type="button" ng-click="agOrderBy = 'lastName'"></span></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="agent in agents | orderBy : agOrderBy | filter : agFilter" >
+                    <td>{{agent.firstName}}</td>
+                    <td>{{agent.lastName}}</td>
+                    <td>
+                        <div>
+                            <p>
+                                <button ng-click="showAgent(agent.id)" class="btn btn-xs btn-success glyphicon glyphicon-user" type="submit"></button>
+                                <button class="btn btn-xs btn-warning glyphicon glyphicon-pencil" type="submit"></button>
+                                <button ng-click="removeAgent(agent.id)" class="btn btn-xs btn-danger glyphicon glyphicon-remove" type="submit"></button>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

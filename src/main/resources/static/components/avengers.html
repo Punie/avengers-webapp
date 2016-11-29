@@ -1,0 +1,53 @@
+<div class="container" ng-controller="avengerController">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <h1>Avengers <span class="badge" ng-bind="avengers.length"></span></h1>
+
+            <hr>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="avFilter">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-filter"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>First Name <span class="glyphicon glyphicon-sort-by-alphabet" type="button" ng-click="avOrderBy = 'firstName'"></span></th>
+                    <th>Last Name <span class="glyphicon glyphicon-sort-by-alphabet" type="button" ng-click="avOrderBy = 'lastName'"></span></th>
+                    <th>Alias <span class="glyphicon glyphicon-sort-by-alphabet" type="button" ng-click="avOrderBy = 'alias'"></span></th>
+                    <th>Power <span class="glyphicon glyphicon-sort-by-order" type="button" ng-click="avOrderBy = 'power'"></span></th>
+                    <th>Agent <span class="glyphicon glyphicon-sort-by-alphabet" type="button" ng-click="avOrderBy = 'agent'"></span></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="avenger in avengers | orderBy : avOrderBy | filter : avFilter" >
+                    <td>{{avenger.firstName}}</td>
+                    <td>{{avenger.lastName}}</td>
+                    <td>{{avenger.alias}}</td>
+                    <td>{{avenger.power}}</td>
+                    <td>{{avenger.agent.firstName}} {{avenger.agent.lastName}}</td>
+                    <td>
+                        <div>
+                            <p>
+                                <button ng-click="showAvenger(avenger.id)" class="btn btn-xs btn-success glyphicon glyphicon-user" type="submit"></button>
+                                <button class="btn btn-xs btn-warning glyphicon glyphicon-pencil" type="submit"></button>
+                                <button ng-click="removeAvenger(avenger.id)" class="btn btn-xs btn-danger glyphicon glyphicon-remove" type="submit"></button>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
