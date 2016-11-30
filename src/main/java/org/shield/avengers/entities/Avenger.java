@@ -7,13 +7,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.*;
-import java.io.Serializable;
 
 @Document(collection = "avengers")
-public class Avenger implements Serializable
+public class Avenger
 {
-    private static final long serialVersionUID = 1L;
-
     @Id
     private String id;
 

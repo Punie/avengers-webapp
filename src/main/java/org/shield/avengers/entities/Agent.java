@@ -5,13 +5,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.*;
-import java.io.Serializable;
 
 @Document(collection = "agents")
-public class Agent implements Serializable
+public class Agent
 {
-    private static final long serialVersionUID = 1L;
-
     @Id
     private String id;
 
