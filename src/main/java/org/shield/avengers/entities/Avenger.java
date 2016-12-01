@@ -32,6 +32,9 @@ public class Avenger
     @Field("power")
     private Integer power;
 
+    @Field("image_url")
+    private String imageURL;
+
     @NotNull
     @DBRef
     private Agent agent;
@@ -80,6 +83,15 @@ public class Avenger
     public void setPower (Integer power)
     {
         this.power = power;
+    }
+
+    public String getImageURL ()
+    {
+        return imageURL;
+    }
+    public void setImageURL (String imageURL)
+    {
+        this.imageURL = imageURL;
     }
 
     public Agent getAgent ()
