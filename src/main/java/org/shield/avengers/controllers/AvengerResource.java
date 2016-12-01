@@ -57,6 +57,7 @@ public class AvengerResource
         avengerData.setFirstName (avenger.getFirstName ());
         avengerData.setLastName (avenger.getLastName ());
         avengerData.setPower (avenger.getPower ());
+        avengerData.setDescription (avenger.getDescription ());
         avengerData.setImageURL (avenger.getImageURL ());
         avengerData.setAgent (avenger.getAgent ());
 

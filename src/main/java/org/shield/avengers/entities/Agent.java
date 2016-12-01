@@ -20,6 +20,12 @@ public class Agent
     @Field("last_name")
     private String lastName;
 
+    @Field("alias")
+    private String alias;
+
+    @Field("description")
+    private String description;
+
     @Field("image_url")
     private String imageURL;
 
@@ -48,6 +54,24 @@ public class Agent
     public void setLastName (String lastName)
     {
         this.lastName = lastName;
+    }
+
+    public String getAlias ()
+    {
+        return alias;
+    }
+    public void setAlias (String alias)
+    {
+        this.alias = alias;
+    }
+
+    public String getDescription ()
+    {
+        return description;
+    }
+    public void setDescription (String description)
+    {
+        this.description = description;
     }
 
     public String getImageURL ()

@@ -32,6 +32,9 @@ public class Avenger
     @Field("power")
     private Integer power;
 
+    @Field("description")
+    private String description;
+
     @Field("image_url")
     private String imageURL;
 
@@ -83,6 +86,15 @@ public class Avenger
     public void setPower (Integer power)
     {
         this.power = power;
+    }
+
+    public String getDescription ()
+    {
+        return description;
+    }
+    public void setDescription (String description)
+    {
+        this.description = description;
     }
 
     public String getImageURL ()

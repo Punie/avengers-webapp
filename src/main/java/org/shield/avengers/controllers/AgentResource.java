@@ -55,6 +55,8 @@ public class AgentResource
 
         agentData.setFirstName (agent.getFirstName ());
         agentData.setLastName (agent.getLastName ());
+        agentData.setAlias (agent.getAlias ());
+        agentData.setDescription (agent.getDescription ());
         agentData.setImageURL (agent.getImageURL ());
 
         Agent updatedAgent = agentRepository.save (agentData);
