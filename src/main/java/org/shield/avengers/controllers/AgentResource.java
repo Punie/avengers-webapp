@@ -38,9 +38,9 @@ public class AgentResource
         Agent agent = agentRepository.findOne (id);
 
         if (agent == null)
-            return new ResponseEntity<Agent> (HttpStatus.NOT_FOUND);
+            return new ResponseEntity<> (HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<Agent> (agent, HttpStatus.OK);
+            return new ResponseEntity<> (agent, HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -51,14 +51,15 @@ public class AgentResource
         Agent agentData = agentRepository.findOne (id);
 
         if (agentData == null)
-            return new ResponseEntity<Agent> (HttpStatus.NOT_FOUND);
+            return new ResponseEntity<> (HttpStatus.NOT_FOUND);
 
         agentData.setFirstName (agent.getFirstName ());
         agentData.setLastName (agent.getLastName ());
+        agentData.setImageURL (agent.getImageURL ());
 
         Agent updatedAgent = agentRepository.save (agentData);
 
-        return new ResponseEntity<Agent> (updatedAgent, HttpStatus.OK);
+        return new ResponseEntity<> (updatedAgent, HttpStatus.OK);
     }
 
     @CrossOrigin

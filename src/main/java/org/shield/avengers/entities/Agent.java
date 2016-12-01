@@ -20,6 +20,9 @@ public class Agent
     @Field("last_name")
     private String lastName;
 
+    @Field("image_url")
+    private String imageURL;
+
     public String getId ()
     {
         return id;
@@ -45,5 +48,14 @@ public class Agent
     public void setLastName (String lastName)
     {
         this.lastName = lastName;
+    }
+
+    public String getImageURL ()
+    {
+        return imageURL;
+    }
+    public void setImageURL (String imageURL)
+    {
+        this.imageURL = imageURL;
     }
 }

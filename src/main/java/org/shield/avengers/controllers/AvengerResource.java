@@ -38,9 +38,9 @@ public class AvengerResource
         Avenger avenger = avengerRepository.findOne (id);
 
         if (avenger == null)
-            return new ResponseEntity<Avenger> (HttpStatus.NOT_FOUND);
+            return new ResponseEntity<> (HttpStatus.NOT_FOUND);
         else
-            return new ResponseEntity<Avenger> (avenger, HttpStatus.OK);
+            return new ResponseEntity<> (avenger, HttpStatus.OK);
     }
 
     @CrossOrigin
@@ -51,7 +51,7 @@ public class AvengerResource
         Avenger avengerData = avengerRepository.findOne (id);
 
         if (avengerData == null)
-            return new ResponseEntity<Avenger> (HttpStatus.NOT_FOUND);
+            return new ResponseEntity<> (HttpStatus.NOT_FOUND);
 
         avengerData.setAlias (avenger.getAlias ());
         avengerData.setFirstName (avenger.getFirstName ());
@@ -62,7 +62,7 @@ public class AvengerResource
 
         Avenger updatedAvenger = avengerRepository.save (avengerData);
 
-        return new ResponseEntity<Avenger> (updatedAvenger, HttpStatus.OK);
+        return new ResponseEntity<> (updatedAvenger, HttpStatus.OK);
     }
 
     @CrossOrigin
